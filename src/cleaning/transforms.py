@@ -48,6 +48,6 @@ def resample_to_daily(s: pd.Series) -> pd.DataFrame:
         "is_interpolated":    False,
         "is_conditional_mean": False,
     })
-    daily.rename_axis("date", inplace=True)
     daily.index = pd.to_datetime(daily.index.date)
+    daily.rename_axis("date", inplace=True)
     return daily
