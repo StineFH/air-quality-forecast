@@ -3,7 +3,6 @@ import os
 import time
 import pandas as pd
 from openaq import OpenAQ
-import datetime as dt
 
 class OpenAQIngestion(BaseIngestion):
     def __init__(
