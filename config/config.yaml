@@ -1,0 +1,14 @@
+features:
+  target_col: pm25_mean
+
+  builders:
+    - name: LogTransform
+
+    - name: LagFeatures
+      lags: [1, 7, 14]
+
+    - name: RollingFeatures
+      windows: [7, 14]
+      lag: 1
+
+    - name: TimeFeatures
