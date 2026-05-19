@@ -199,9 +199,19 @@ class EEAIngestion(BaseIngestion):
 
 
 if __name__ == "__main__":
+    # ingestion = EEAIngestion(
+    #     country_code="DK",
+    #     pollutant="PM2.5",
+    #     aggregation_type="hour",
+    # )
+    # ingestion.fetch_and_save()
+
+    # Fetch from Swedish station in Malmø to fill out missing data in 2023 December
     ingestion = EEAIngestion(
-        country_code="DK",
+        country_code="SE",
         pollutant="PM2.5",
         aggregation_type="hour",
+        station_filter='SPO-SE0001A_06001_100'
     )
     ingestion.fetch_and_save()
+
